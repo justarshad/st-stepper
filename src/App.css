@@ -1,38 +1,84 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .App {
-  text-align: center;
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App .status {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App .status .bar {
+  position: absolute;
+  top: 24%;
+  height: 0.6rem;
+  background: #b9b9b9;
+  z-index: -2;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App .status .bar .filled {
+  display: block;
+  transition: 0.6s ease;
+  height: 100%;
+  background: green;
+}
+
+.App .status .step {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0.04rem;
+}
+
+.App .status .step span {
+  height: 4rem;
+  width: 4rem;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 1.8rem;
+  font-weight: 600;
+  background: #b9b9b9;
+  border-radius: 100%;
+}
+
+.App .status .step.completed span {
   color: white;
+  background: green;
 }
 
-.App-link {
-  color: #61dafb;
+.App .status .step.next span {
+  color: white;
+  background: blue;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App .status .step p {
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+}
+
+.App h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.App h1 .ans {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.App button{
+  padding: 0.4rem 1.2rem;
+  font-size: 1.6rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
 }
